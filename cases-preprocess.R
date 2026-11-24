@@ -16,6 +16,9 @@ clean_distances <- read_csv('/Users/georgiagrahek/Data sets/death_records.txt')|
   # group cases by hour
   group_by(hour) |>
   
+  #create a column named "hr_cases" which counts the amount fo cases in each hour
+  mutate(hr_cases = n()) |>
+  
   # calculate the proportion of cases per hour and create a new column named "hour props"
   mutate(hr_props = n() / total_cases) |>
   
